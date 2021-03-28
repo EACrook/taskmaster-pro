@@ -223,19 +223,19 @@ $(".card .list-group").sortable({
   scroll: false,
   tolerance: "pointer",
   helper: "clone",
-  activate: function(event){
+  activate: function(event, ui){
    $(this).addClass("dropover");
-   $("bottom-trash").addClass("bottom-trash-drag");
+   $(".bottom-trash").addClass("bottom-trash-drag");
   },
-  deactivate: function(event) {
+  deactivate: function(event, ui) {
     $(this).removeClass("dropover");
-    $("bottom-trash").removeClass("bottom-trash-drag");
+    $(".bottom-trash").removeClass("bottom-trash-drag");
   },
   over: function(event) {
-    $("event.target").addClass("dropover-active");
+    $(event.target).addClass("dropover-active");
   },
   out: function(event) {
-    $("event.target").removeClass("dropover-active");
+    $(event.target).removeClass("dropover-active");
   },
 
   update: function(event) {
